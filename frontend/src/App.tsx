@@ -22,6 +22,7 @@ function App() {
       <nav style={style}>
         <Link to="/">Home</Link>
         <Link to="/settings">Settings</Link>
+        <button class="btn">Button</button>
         <br />
       </nav>
       <Routes>
