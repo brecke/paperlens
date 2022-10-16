@@ -40,7 +40,10 @@ defmodule Paperlens.MixProject do
       {:ecto_sql, "~> 3.6"},
       {:postgrex, ">= 0.0.0"},
       {:jason, "~> 1.2"},
-      {:swoosh, "~> 1.3"}
+      {:json, "~> 1.4"},
+      {:swoosh, "~> 1.3"},
+      {:finch, "~> 0.8"},
+      {:elixir_xml_to_map, "~> 3.0"}
     ]
   end
 
