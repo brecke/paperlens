@@ -5,16 +5,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
 	plugins: [react()],
 	/**
-	 * Using the `webapp` base path for production builds
-	 * so we can leverage Phoenix static assets plug to deliver
-	 * our React app directly from our final Elixir app,
-	 * Serving all files from the `priv/static/webapp` folder.
-	 * NOTE: Remember to move the frontend build files to the
-	 * `priv` folder during the application build process in CI
-	 */
-	// @ts-expect-error
-	base: process.env.NODE_ENV === 'production' ? '/webapp/' : '/',
-	/**
 	 * Forward all requests made by our React frontend to `localhost:3000/api`
 	 * to our Phoenix backend running at `localhost:4000`.
 	 * This is only necessary during development.
@@ -30,4 +20,14 @@ export default defineConfig({
 			},
 		},
 	},
+	/**
+	 * Using the `webapp` base path for production builds
+	 * so we can leverage Phoenix static assets plug to deliver
+	 * our React app directly from our final Elixir app,
+	 * Serving all files from the `priv/static/webapp` folder.
+	 * NOTE: Remember to move the frontend build files to the
+	 * `priv` folder during the application build process in CI
+	 */
+	// @ts-expect-error
+	base: process.env.NODE_ENV === 'production' ? '/webapp/' : '/',
 });

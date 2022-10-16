@@ -2,6 +2,8 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 
+import PaperForm from './dashboard/paperform';
+
 const style = { display: 'flex', gap: '8px', padding: '8px' };
 
 function App() {
@@ -21,23 +23,8 @@ function App() {
 	return (
 		<BrowserRouter basename="app">
 			<nav style={style}>
-				<Link to="/">Home</Link>
+				<Link to="/">Dashboard</Link>
 				<Link to="/settings">Settings</Link>
-				<button className="btn">Button</button>
-
-				<div className="card w-96 bg-base-100 shadow-xl">
-					<figure>
-						<img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-					</figure>
-					<div className="card-body">
-						<h2 className="card-title">Shoes!</h2>
-						<p>If a dog chews shoes whose shoes does he choose?</p>
-						<div className="card-actions justify-end">
-							<button className="btn btn-primary">Buy Now</button>
-						</div>
-					</div>
-				</div>
-
 				<br />
 			</nav>
 			<Routes>
@@ -50,7 +37,7 @@ function App() {
 
 function SettingsPage() {
 	return (
-		<div>
+		<div className="container mx-auto">
 			<h1 className="text-3xl font-bold underline">Settings</h1>
 			<ul>
 				<li>My profile</li>
@@ -62,11 +49,11 @@ function SettingsPage() {
 }
 
 function HomePage() {
-	const style = { padding: '8px' };
+	const style = { class: 'container mx-auto', padding: '8px' };
 	return (
 		<div style={style}>
-			<h1 className="text-3xl font-bold underline">React TS home</h1>
-			<p>Welcome to the homepage</p>
+			<h1 className="text-3xl font-bold underline">Dashboard</h1>
+			<PaperForm />
 		</div>
 	);
 }
