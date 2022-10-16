@@ -6,6 +6,36 @@ defmodule PaperlensWeb.WebappController do
     |> send_resp(200, render_react_app())
   end
 
+  def search(conn, params) do
+    query =
+      if Mix.env() == :dev do
+        # debugging on dev
+        "In vitro ischemia triggers a transcriptional response to down-regulate synaptic proteins in hippocampal neurons"
+      else
+        params["term"]
+      end
+
+    paper_data =
+      Pubmed.e_search(query)
+      |> Pubmed.e_fetch()
+
+    json(conn, paper_data)
+  end
+
+  @spec fetch(Plug.Conn.t(), any) :: Plug.Conn.t()
+  def fetch(conn, params) do
+    ids =
+      if Mix.env() == :dev do
+        # debugging on dev
+        ["24960035"]
+      else
+        [params["id"]]
+      end
+
+    paper_data = Pubmed.e_fetch(ids)
+    json(conn, paper_data)
+  end
+
   # Serve the index.html file as-is and let React
   # take care of the rendering and client-side rounting.
   #

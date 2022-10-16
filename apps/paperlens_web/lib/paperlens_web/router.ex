@@ -20,8 +20,13 @@ defmodule PaperlensWeb.Router do
     get "/", PageController, :index
   end
 
-  scope "/app", PaperlensWeb do
+  # scope "/app", PaperlensWeb do
+  scope "/api", PaperlensWeb do
+    pipe_through :api
     get "/", WebappController, :index
+    # this doesn't need to be here, actually
+    get "/search", WebappController, :search
+    get "/fetch", WebappController, :fetch
     get "/*path", WebappController, :index
   end
 
