@@ -25,15 +25,12 @@ defmodule Pubmed do
 
   def e_fetch(paper_ids, retmode \\ "xml") do
     # let's fetch the first element only, for now
-    paper_ids =
-      paper_ids
-      |> Enum.slice(0, 1)
-      |> Enum.join(",")
+    first_paper_id = hd(paper_ids)
 
     url =
       @base <>
         "efetch.fcgi?db=" <>
-        @db <> "&retmode=" <> retmode <> "&id=" <> paper_ids
+        @db <> "&retmode=" <> retmode <> "&id=" <> first_paper_id
 
     Finch.start_link(name: MyFinch)
 
