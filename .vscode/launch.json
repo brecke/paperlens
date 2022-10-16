@@ -7,6 +7,15 @@
     {
       "type": "mix_task",
       "request": "launch",
+      "name": "mix test",
+      "task": "test",
+      "debugExpressionTimeoutMs": 160000,
+      "taskArgs": ["--only api:true"],
+      "projectDir": "${workspaceRoot}"
+    },
+    {
+      "type": "mix_task",
+      "request": "launch",
       "name": "mix phx.server debug",
       "debugExpressionTimeoutMs": 160000,
       "task": "phx.server",
