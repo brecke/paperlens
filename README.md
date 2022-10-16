@@ -1,3 +1,5 @@
+[![XO code style](https://shields.io/badge/code_style-5ed9c7?logo=xo&labelColor=gray)](https://github.com/xojs/xo)
+
 # Paperlens.Umbrella
 
 Initial setup heavily inspired by [this post](https://bpaulino.com/entries/modern-webapps-with-elixir-phoenix-typescript-react) and [this one](https://betterprogramming.pub/phoenix-1-6-with-typescript-react-bea7f3a792d5)
@@ -17,6 +19,14 @@ Start the frontend:
 cd frontend
 npm run dev
 ```
+
+To run backend API tests:
+
+```
+mix test --only api:true
+```
+
+`mix test` runs all the tests including generated ones.
 
 ## Production
 
