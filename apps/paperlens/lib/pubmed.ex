@@ -16,7 +16,7 @@ defmodule Pubmed do
       Finch.build(:get, "#{url}")
       |> Finch.request(MyFinch)
 
-    {:ok, dict} = JSON.decode(body)
+    dict = Jason.decode!(body)
     search_result = dict["esearchresult"]
     paper_ids = search_result["idlist"]
 
