@@ -12,15 +12,21 @@ defmodule Pubmed do
 
     Finch.start_link(name: MyFinch)
 
-    {:ok, %Finch.Response{body: body}} =
+    paper_ids =
       Finch.build(:get, "#{url}")
       |> Finch.request(MyFinch)
-
-    dict = Jason.decode!(body)
-    search_result = dict["esearchresult"]
-    paper_ids = search_result["idlist"]
+      |> extract_body()
+      |> Jason.decode!()
+      |> Map.get("esearchresult")
+      |> Map.get("idlist")
 
     paper_ids
+  end
+
+  defp extract_body(response) do
+    # extract_body = fn response ->
+    {:ok, %Finch.Response{body: body}} = response
+    body
   end
 
   def e_fetch(paper_ids, retmode \\ "xml") do
@@ -34,19 +40,12 @@ defmodule Pubmed do
 
     Finch.start_link(name: MyFinch)
 
-    extract_body = fn response ->
-      {:ok, %Finch.Response{body: body}} = response
-      body
-    end
-
-    # {:ok, %Finch.Response{body: body}} =
     paper_data =
       Finch.build(:get, url)
       |> Finch.request(MyFinch)
-      |> extract_body.()
+      |> extract_body()
       |> XmlToMap.naive_map()
 
-    # paper_data = XmlToMap
     paper_data
   end
 end
