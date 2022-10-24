@@ -1,7 +1,12 @@
-import { useState } from "react";
-import { FormEvent } from "react";
+import { useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { not, keys, includes, pipe, isEmpty } from "ramda";
-import { defaultToEmptyString, containsNumbers, isEmptyArray, isNotEmptyString } from "../utils/extra-remeda";
+import {
+  defaultToEmptyString,
+  containsNumbers,
+  isEmptyArray,
+  isNotEmptyString,
+} from "../utils/extra-remeda";
 import * as R from "remeda";
 import {
   getPublicationAbstract,
@@ -26,7 +31,8 @@ const PUBMED_ENDPOINTS = {
 const aintValid = (endpoint: string) =>
   !(includes(endpoint, keys(PUBMED_ENDPOINTS)), not);
 
-function PaperForm() {
+function SearchForm() {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [publication, setPublication] = useState({
     title: "",
@@ -34,7 +40,7 @@ function PaperForm() {
     authors: [],
     date: new Date(),
   });
-  const [status, setStatus] = useState(FORM_STATE.quiet); 
+  const [status, setStatus] = useState(FORM_STATE.quiet);
 
   function whileSubmitting() {
     return R.equals(FORM_STATE.submitting, status);
@@ -64,6 +70,13 @@ function PaperForm() {
         date: getPublicationDate(response),
         abstract: getPublicationAbstract(response) as string,
       });
+
+      // TODO extract from response
+      const PMID = "24960035";
+
+      navigate({
+        pathname: `/publication/${PMID}`,
+      });
     } catch (error) {
       // TODO remove
       console.log(error);
@@ -86,31 +99,39 @@ function PaperForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-control w-full max-w-xs">
-        <label className="label">
-          <span className="label-text">Find a paper by title on pubmed</span>
-        </label>
-        <input
-          type="text"
-          placeholder="Insert paper title or PMID e.g. In vitro ischemia..."
-          className="input input-bordered w-full max-w-xs"
-          value={search}
-          onChange={handleChange}
-        />
-      </div>
-      <input type="submit" value="Submit" disabled={whileSubmitting()} />
-      {isNotEmptyString(publication.title) && (
-        <div>
-          {publication && "Publication:"}
-          <ul>
-            <li>{publication.title}</li>
-            <li>{publication.date.toString()}</li>
-          </ul>
+    <>
+      <h1>Search for a publication</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="form-control w-full max-w-xs">
+          <label className="label">
+            <span className="label-text">Find a paper by title on pubmed</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Insert paper title or PMID e.g. In vitro ischemia..."
+            className="input input-bordered input-lg w-full max-w-xs"
+            value={search}
+            onChange={handleChange}
+          />
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+            disabled={whileSubmitting()}
+          />
         </div>
-      )}
-    </form>
+        {isNotEmptyString(publication.title) && (
+          <div>
+            {publication && "Publication:"}
+            <ul>
+              <li>{publication.title}</li>
+              <li>{publication.date.toString()}</li>
+            </ul>
+          </div>
+        )}
+      </form>
+    </>
   );
 }
 
-export default PaperForm;
+export default SearchForm;
