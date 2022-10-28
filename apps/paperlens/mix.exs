@@ -42,7 +42,8 @@ defmodule Paperlens.MixProject do
       {:jason, "~> 1.2"},
       {:swoosh, "~> 1.3"},
       {:finch, "~> 0.8"},
-      {:elixir_xml_to_map, "~> 3.0"}
+      {:elixir_xml_to_map, "~> 3.0"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false}
     ]
   end
 

@@ -1,0 +1,820 @@
+{
+  "PubmedArticleSet": {
+    "PubmedArticle": {
+      "MedlineCitation": {
+        "#content": {
+          "Article": {
+            "#content": {
+              "Abstract": {
+                "AbstractText": "Transient global cerebral ischemia induces profound changes in the transcriptome of brain cells, which is partially associated with the induction or repression of genes that influence the ischemic response. However, the mechanisms responsible for the selective vulnerability of hippocampal neurons to global ischemia remain to be clarified. To identify molecular changes elicited by ischemic insults, we subjected hippocampal primary cultures to oxygen-glucose deprivation (OGD), an in vitro model for global ischemia that resulted in delayed neuronal death with an excitotoxic component. To investigate changes in the transcriptome of hippocampal neurons submitted to OGD, total RNA was extracted at early (7 h) and delayed (24 h) time points after OGD and used in a whole-genome RNA microarray. We observed that at 7 h after OGD there was a general repression of genes, whereas at 24 h there was a general induction of gene expression. Genes related with functions such as transcription and RNA biosynthesis were highly regulated at both periods of incubation after OGD, confirming that the response to ischemia is a dynamic and coordinated process. Our analysis showed that genes for synaptic proteins, such as those encoding for PICK1, GRIP1, TARPγ3, calsyntenin-2/3, SAPAP2 and SNAP-25, were down-regulated after OGD. Additionally, OGD decreased the mRNA and protein expression levels of the GluA1 AMPA receptor subunit as well as the GluN2A and GluN2B subunits of NMDA receptors, but increased the mRNA expression of the GluN3A subunit, thus altering the composition of ionotropic glutamate receptors in hippocampal neurons. Together, our results present the expression profile elicited by in vitro ischemia in hippocampal neurons, and indicate that OGD activates a transcriptional program leading to down-regulation in the expression of genes coding for synaptic proteins, suggesting that the synaptic proteome may change after ischemia."
+              },
+              "ArticleDate": {
+                "#content": { "Day": "24", "Month": "06", "Year": "2014" },
+                "-DateType": "Electronic"
+              },
+              "ArticleTitle": "In vitro ischemia triggers a transcriptional response to down-regulate synaptic proteins in hippocampal neurons.",
+              "AuthorList": {
+                "#content": {
+                  "Author": [
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "CNC-Center for Neuroscience and Cell Biology, University of Coimbra, Coimbra, Portugal; Faculty of Pharmacy, University of Coimbra, Coimbra, Portugal."
+                        },
+                        "ForeName": "Joana",
+                        "Initials": "J",
+                        "LastName": "Fernandes"
+                      },
+                      "-ValidYN": "Y"
+                    },
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "CNC-Center for Neuroscience and Cell Biology, University of Coimbra, Coimbra, Portugal; Faculty of Pharmacy, University of Coimbra, Coimbra, Portugal."
+                        },
+                        "ForeName": "Marta",
+                        "Initials": "M",
+                        "LastName": "Vieira"
+                      },
+                      "-ValidYN": "Y"
+                    },
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "RNA Biology Laboratory, Department of Biology and CESAM, University of Aveiro, Aveiro, Portugal."
+                        },
+                        "ForeName": "Laura",
+                        "Initials": "L",
+                        "LastName": "Carreto"
+                      },
+                      "-ValidYN": "Y"
+                    },
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "RNA Biology Laboratory, Department of Biology and CESAM, University of Aveiro, Aveiro, Portugal."
+                        },
+                        "ForeName": "Manuel A S",
+                        "Initials": "MA",
+                        "LastName": "Santos"
+                      },
+                      "-ValidYN": "Y"
+                    },
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "CNC-Center for Neuroscience and Cell Biology, University of Coimbra, Coimbra, Portugal; Department of Life Sciences, Faculty of Sciences and Technology, University of Coimbra, Coimbra, Portugal."
+                        },
+                        "ForeName": "Carlos B",
+                        "Initials": "CB",
+                        "LastName": "Duarte"
+                      },
+                      "-ValidYN": "Y"
+                    },
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "CNC-Center for Neuroscience and Cell Biology, University of Coimbra, Coimbra, Portugal; Department of Life Sciences, Faculty of Sciences and Technology, University of Coimbra, Coimbra, Portugal."
+                        },
+                        "ForeName": "Ana Luísa",
+                        "Initials": "AL",
+                        "LastName": "Carvalho"
+                      },
+                      "-ValidYN": "Y"
+                    },
+                    {
+                      "#content": {
+                        "AffiliationInfo": {
+                          "Affiliation": "CNC-Center for Neuroscience and Cell Biology, University of Coimbra, Coimbra, Portugal; Faculty of Pharmacy, University of Coimbra, Coimbra, Portugal."
+                        },
+                        "ForeName": "Armanda E",
+                        "Initials": "AE",
+                        "LastName": "Santos"
+                      },
+                      "-ValidYN": "Y"
+                    }
+                  ]
+                },
+                "-CompleteYN": "Y"
+              },
+              "ELocationID": {
+                "#content": "10.1371/journal.pone.0099958",
+                "-EIdType": "doi",
+                "-ValidYN": "Y"
+              },
+              "Journal": {
+                "ISOAbbreviation": "PLoS One",
+                "ISSN": { "#content": "1932-6203", "-IssnType": "Electronic" },
+                "JournalIssue": {
+                  "#content": {
+                    "Issue": "6",
+                    "PubDate": { "Year": "2014" },
+                    "Volume": "9"
+                  },
+                  "-CitedMedium": "Internet"
+                },
+                "Title": "PloS one"
+              },
+              "Language": "eng",
+              "Pagination": { "MedlinePgn": "e99958" },
+              "PublicationTypeList": {
+                "PublicationType": [
+                  { "#content": "Journal Article", "-UI": "D016428" },
+                  {
+                    "#content": "Research Support, Non-U.S. Gov't",
+                    "-UI": "D013485"
+                  }
+                ]
+              }
+            },
+            "-PubModel": "Electronic-eCollection"
+          },
+          "ChemicalList": {
+            "Chemical": [
+              {
+                "NameOfSubstance": {
+                  "#content": "Nerve Tissue Proteins",
+                  "-UI": "D009419"
+                },
+                "RegistryNumber": "0"
+              },
+              {
+                "NameOfSubstance": { "#content": "Glucose", "-UI": "D005947" },
+                "RegistryNumber": "IY9XDZ35W2"
+              },
+              {
+                "NameOfSubstance": { "#content": "Oxygen", "-UI": "D010100" },
+                "RegistryNumber": "S88TT14065"
+              }
+            ]
+          },
+          "CitationSubset": "IM",
+          "DateCompleted": { "Day": "02", "Month": "11", "Year": "2015" },
+          "DateRevised": { "Day": "21", "Month": "10", "Year": "2021" },
+          "MedlineJournalInfo": {
+            "Country": "United States",
+            "ISSNLinking": "1932-6203",
+            "MedlineTA": "PLoS One",
+            "NlmUniqueID": "101285081"
+          },
+          "MeshHeadingList": {
+            "MeshHeading": [
+              {
+                "DescriptorName": {
+                  "#content": "Animals",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D000818"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Cell Hypoxia",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D015687"
+                },
+                "QualifierName": {
+                  "#content": "drug effects",
+                  "-MajorTopicYN": "Y",
+                  "-UI": "Q000187"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Down-Regulation",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D015536"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Gene Expression Profiling",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D020869"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Glucose",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D005947"
+                },
+                "QualifierName": {
+                  "#content": "deficiency",
+                  "-MajorTopicYN": "Y",
+                  "-UI": "Q000172"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Hippocampus",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D006624"
+                },
+                "QualifierName": [
+                  {
+                    "#content": "cytology",
+                    "-MajorTopicYN": "N",
+                    "-UI": "Q000166"
+                  },
+                  {
+                    "#content": "embryology",
+                    "-MajorTopicYN": "Y",
+                    "-UI": "Q000196"
+                  }
+                ]
+              },
+              {
+                "DescriptorName": {
+                  "#content": "In Vitro Techniques",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D066298"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Nerve Tissue Proteins",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D009419"
+                },
+                "QualifierName": [
+                  {
+                    "#content": "genetics",
+                    "-MajorTopicYN": "Y",
+                    "-UI": "Q000235"
+                  },
+                  {
+                    "#content": "metabolism",
+                    "-MajorTopicYN": "Y",
+                    "-UI": "Q000378"
+                  }
+                ]
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Neurons",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D009474"
+                },
+                "QualifierName": [
+                  {
+                    "#content": "cytology",
+                    "-MajorTopicYN": "Y",
+                    "-UI": "Q000166"
+                  },
+                  {
+                    "#content": "metabolism",
+                    "-MajorTopicYN": "N",
+                    "-UI": "Q000378"
+                  }
+                ]
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Oligonucleotide Array Sequence Analysis",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D020411"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Oxygen",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D010100"
+                },
+                "QualifierName": {
+                  "#content": "metabolism",
+                  "-MajorTopicYN": "Y",
+                  "-UI": "Q000378"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Rats",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D051381"
+                }
+              },
+              {
+                "DescriptorName": {
+                  "#content": "Rats, Wistar",
+                  "-MajorTopicYN": "N",
+                  "-UI": "D017208"
+                }
+              }
+            ]
+          },
+          "PMID": { "#content": "24960035", "-Version": "1" }
+        },
+        "-Owner": "NLM",
+        "-Status": "MEDLINE"
+      },
+      "PubmedData": {
+        "ArticleIdList": {
+          "ArticleId": [
+            { "#content": "24960035", "-IdType": "pubmed" },
+            { "#content": "10.1371/journal.pone.0099958", "-IdType": "doi" },
+            { "#content": "PONE-D-14-07336", "-IdType": "pii" },
+            { "#content": "PMC4069008", "-IdType": "pmc" }
+          ]
+        },
+        "History": {
+          "PubMedPubDate": [
+            {
+              "#content": { "Day": "19", "Month": "02", "Year": "2014" },
+              "-PubStatus": "received"
+            },
+            {
+              "#content": { "Day": "20", "Month": "05", "Year": "2014" },
+              "-PubStatus": "accepted"
+            },
+            {
+              "#content": {
+                "Day": "25",
+                "Hour": "6",
+                "Minute": "0",
+                "Month": "6",
+                "Year": "2014"
+              },
+              "-PubStatus": "entrez"
+            },
+            {
+              "#content": {
+                "Day": "25",
+                "Hour": "6",
+                "Minute": "0",
+                "Month": "6",
+                "Year": "2014"
+              },
+              "-PubStatus": "pubmed"
+            },
+            {
+              "#content": {
+                "Day": "3",
+                "Hour": "6",
+                "Minute": "0",
+                "Month": "11",
+                "Year": "2015"
+              },
+              "-PubStatus": "medline"
+            }
+          ]
+        },
+        "PublicationStatus": "epublish",
+        "ReferenceList": {
+          "Reference": [
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16138078", "-IdType": "pubmed" }
+              },
+              "Citation": "EMBO J. 2005 Sep 21;24(18):3266-78"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "23883441", "-IdType": "pubmed" }
+              },
+              "Citation": "ASN Neuro. 2013 Aug 29;5(4):231-42"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "12242102", "-IdType": "pubmed" }
+              },
+              "Citation": "Brain Res Bull. 2002 Sep 15;58(5):491-8"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "22207505", "-IdType": "pubmed" }
+              },
+              "Citation": "Stroke. 2012 Feb;43(2):607-15"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "10652545", "-IdType": "pubmed" }
+              },
+              "Citation": "Trends Neurosci. 2000 Feb;23(2):59"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "12008020", "-IdType": "pubmed" }
+              },
+              "Citation": "Brain Res Mol Brain Res. 2002 Apr 30;100(1-2):43-52"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "20053906", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2010 Jan 6;30(1):242-54"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19103243", "-IdType": "pubmed" }
+              },
+              "Citation": "Neurochem Int. 2009 Mar-Apr;54(3-4):180-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19761817", "-IdType": "pubmed" }
+              },
+              "Citation": "Neuroscience. 2009 Dec 15;164(3):1119-26"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "17089194", "-IdType": "pubmed" }
+              },
+              "Citation": "Neurochem Res. 2006 Dec;31(12):1433-41"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "21807096", "-IdType": "pubmed" }
+              },
+              "Citation": "Neurobiol Dis. 2011 Dec;44(3):292-303"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "17275103", "-IdType": "pubmed" }
+              },
+              "Citation": "Trends Neurosci. 2007 Mar;30(3):126-34"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "12657670", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2003 Mar 15;23(6):2112-21"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "18000041", "-IdType": "pubmed" }
+              },
+              "Citation": "Proc Natl Acad Sci U S A. 2007 Nov 20;104(47):18784-8"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "22240240", "-IdType": "pubmed" }
+              },
+              "Citation": "Trends Neurosci. 2012 Apr;35(4):240-9"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9849671", "-IdType": "pubmed" }
+              },
+              "Citation": "Neuropharmacology. 1998 Oct-Nov;37(10-11):1355-67"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11702043", "-IdType": "pubmed" }
+              },
+              "Citation": "J Cereb Blood Flow Metab. 2001 Nov;21(11):1281-94"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19631194", "-IdType": "pubmed" }
+              },
+              "Citation": "Brain Res. 2009 Oct 6;1292:107-22"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19640847", "-IdType": "pubmed" }
+              },
+              "Citation": "J Biol Chem. 2009 Sep 18;284(38):25479-87"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "22467039", "-IdType": "pubmed" }
+              },
+              "Citation": "J Mol Neurosci. 2012 Jun;47(2):322-39"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "12099900", "-IdType": "pubmed" }
+              },
+              "Citation": "Eur J Neurosci. 2002 Jun;15(12):1937-52"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "15907461", "-IdType": "pubmed" }
+              },
+              "Citation": "Cell. 2005 May 20;121(4):499-501"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11823786", "-IdType": "pubmed" }
+              },
+              "Citation": "Nature. 2002 Feb 14;415(6873):793-8"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "15334602", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci Res. 2004 Sep 15;77(6):843-57"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11045194", "-IdType": "pubmed" }
+              },
+              "Citation": "Br J Neurosurg. 2000 Aug;14(4):305-12"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16049015", "-IdType": "pubmed" }
+              },
+              "Citation": "J Biol Chem. 2005 Oct 14;280(41):35018-27"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11160393", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2001 Feb 15;21(4):1228-37"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "24760862", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2014 Apr 23;34(17):6030-9"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9236229", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 1997 Aug 15;17(16):6179-88"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "21849555", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2011 Aug 17;31(33):11941-52"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "3614648", "-IdType": "pubmed" }
+              },
+              "Citation": "Neurology. 1987 Aug;37(8):1281-6"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16093311", "-IdType": "pubmed" }
+              },
+              "Citation": "Proc Natl Acad Sci U S A. 2005 Aug 23;102(34):12230-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "20229265", "-IdType": "pubmed" }
+              },
+              "Citation": "Pflugers Arch. 2010 Jul;460(2):525-42"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "23251573", "-IdType": "pubmed" }
+              },
+              "Citation": "PLoS One. 2012;7(12):e51552"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "17360495", "-IdType": "pubmed" }
+              },
+              "Citation": "Proc Natl Acad Sci U S A. 2007 Mar 6;104(10):4170-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "20363861", "-IdType": "pubmed" }
+              },
+              "Citation": "Mol Pharmacol. 2010 Jul;78(1):1-11"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "12209845", "-IdType": "pubmed" }
+              },
+              "Citation": "J Comp Neurol. 2002 Sep 2;450(4):303-17"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9024696", "-IdType": "pubmed" }
+              },
+              "Citation": "J Cell Biol. 1997 Feb 10;136(3):669-78"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16698262", "-IdType": "pubmed" }
+              },
+              "Citation": "Curr Opin Neurobiol. 2006 Jun;16(3):281-7"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19071098", "-IdType": "pubmed" }
+              },
+              "Citation": "Brain Res. 2009 Feb 3;1252:1-14"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "24239129", "-IdType": "pubmed" }
+              },
+              "Citation": "Biol Psychiatry. 2014 Jul 1;76(1):47-56"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16344151", "-IdType": "pubmed" }
+              },
+              "Citation": "Neuroscience. 2005;136(3):779-94"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9115257", "-IdType": "pubmed" }
+              },
+              "Citation": "J Biol Chem. 1997 May 2;272(18):11943-51"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "1438239", "-IdType": "pubmed" }
+              },
+              "Citation": "Proc Natl Acad Sci U S A. 1992 Nov 1;89(21):10499-503"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11456315", "-IdType": "pubmed" }
+              },
+              "Citation": "Ann Neurol. 2001 Jul;50(1):93-103"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16540573", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2006 Mar 15;26(11):2956-63"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9778184", "-IdType": "pubmed" }
+              },
+              "Citation": "J Cereb Blood Flow Metab. 1998 Oct;18(10):1077-87"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "23069678", "-IdType": "pubmed" }
+              },
+              "Citation": "Neurobiol Dis. 2013 Feb;50:76-85"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19386922", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2009 Apr 22;29(16):5260-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9620802", "-IdType": "pubmed" }
+              },
+              "Citation": "Nature. 1998 May 28;393(6683):377-81"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "24513087", "-IdType": "pubmed" }
+              },
+              "Citation": "Neurobiol Dis. 2014 May;65:220-32"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11717388", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2001 Dec 1;21(23):RC185"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "18073773", "-IdType": "pubmed" }
+              },
+              "Citation": "J Cereb Blood Flow Metab. 2008 Apr;28(4):655-73"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "22371606", "-IdType": "pubmed" }
+              },
+              "Citation": "Proc Natl Acad Sci U S A. 2012 Apr 17;109(16):E962-71"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19702335", "-IdType": "pubmed" }
+              },
+              "Citation": "J Proteome Res. 2009 Oct;8(10):4536-52"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "15895086", "-IdType": "pubmed" }
+              },
+              "Citation": "Nat Neurosci. 2005 Jun;8(6):768-75"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16892187", "-IdType": "pubmed" }
+              },
+              "Citation": "Hippocampus. 2006;16(10):814-25"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11087875", "-IdType": "pubmed" }
+              },
+              "Citation": "Proc Natl Acad Sci U S A. 2000 Nov 21;97(24):13360-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "17581960", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2007 Jun 20;27(25):6729-39"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "11165369", "-IdType": "pubmed" }
+              },
+              "Citation": "Brain Res Mol Brain Res. 2001 Jan 31;86(1-2):34-47"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "23269905", "-IdType": "pubmed" }
+              },
+              "Citation": "Korean J Physiol Pharmacol. 2012 Dec;16(6):423-9"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9454838", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 1998 Feb 15;18(4):1280-96"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "19321442", "-IdType": "pubmed" }
+              },
+              "Citation": "J Biol Chem. 2009 May 22;284(21):14230-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9663507", "-IdType": "pubmed" }
+              },
+              "Citation": "J Cereb Blood Flow Metab. 1998 Jul;18(7):768-75"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "24670762", "-IdType": "pubmed" }
+              },
+              "Citation": "Nature. 2014 Mar 27;507(7493):448-54"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "24361499", "-IdType": "pubmed" }
+              },
+              "Citation": "Prog Neurobiol. 2014 Apr;115:157-88"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "24094106", "-IdType": "pubmed" }
+              },
+              "Citation": "Neuron. 2013 Oct 2;80(1):113-28"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "9221768", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 1997 Aug 1;17(15):5687-96"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "18425811", "-IdType": "pubmed" }
+              },
+              "Citation": "J Comp Neurol. 2008 Jul 1;509(1):118-35"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "14747748", "-IdType": "pubmed" }
+              },
+              "Citation": "J Cereb Blood Flow Metab. 2004 Feb;24(2):212-23"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "20739572", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2010 Aug 25;30(34):11501-5"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "20097255", "-IdType": "pubmed" }
+              },
+              "Citation": "Prog Neurobiol. 2010 May;91(1):23-37"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "16707783", "-IdType": "pubmed" }
+              },
+              "Citation": "J Neurosci. 2006 May 17;26(20):5309-19"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "23295187", "-IdType": "pubmed" }
+              },
+              "Citation": "Brain Res. 2013 Mar 7;1499:129-35"
+            },
+            {
+              "ArticleIdList": {
+                "ArticleId": { "#content": "23284893", "-IdType": "pubmed" }
+              },
+              "Citation": "PLoS One. 2012;7(12):e52121"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
