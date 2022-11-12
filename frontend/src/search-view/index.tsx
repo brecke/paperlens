@@ -9,10 +9,12 @@ import {appendString,
 	isEmptyArray,
 	isNotEmptyString,
 } from '../utils/extra-remeda';
-import type {JSONPublication} from '../types/types';
+import type {JSONPublication, Publication} from '../types/types';
+import store from '../store';
 import {
 	getPublicationAbstract,
 	getPublicationDate,
+	getAuthors,
 	getPublicationTitle,
 } from './pubmed-utils';
 
@@ -40,8 +42,8 @@ function SearchForm() {
 		title: '',
 		abstract: '',
 		authors: [],
-		date: new Date(),
-	});
+		date: 0,
+	} as Publication);
 	const [status, setStatus] = useState(FORM_STATE.quiet);
 
 	function whileSubmitting() {
@@ -66,21 +68,27 @@ function SearchForm() {
 
 			setStatus(FORM_STATE.success);
 
-			setPublication({
+			const publication: Publication = {
 				title: R.pipe(response, getPublicationTitle, defaultToEmptyString),
-				authors: [],
+				authors: getAuthors(response),
 				date: getPublicationDate(response),
 				abstract: getPublicationAbstract(response),
-			});
+			};
+			// TODO: we won't need to set component state once we have redux in place
+			setPublication(publication);
 
 			// TODO extract from response
 			const pubmedId = '24960035';
 
-			navigate(
+			store.dispatch({type: 'search/publicationSelected', payload: publication});
+
+			/*
+			Navigate(
 				{
 					pathname: `/publication/${pubmedId}`,
 				},
 			);
+			*/
 		} catch {
 			setStatus(FORM_STATE.error);
 		}
@@ -123,15 +131,6 @@ function SearchForm() {
 						disabled={whileSubmitting()}
 					/>
 				</div>
-				{isNotEmptyString(publication.title) && (
-					<div>
-						{publication && 'Publication:'}
-						<ul>
-							<li>{publication.title}</li>
-							<li>{publication.date.toString()}</li>
-						</ul>
-					</div>
-				)}
 			</form>
 		</>
 	);

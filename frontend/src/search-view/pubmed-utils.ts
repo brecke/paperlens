@@ -1,7 +1,7 @@
 import * as R from 'remeda';
 import {defaultToEmptyString} from '../utils/extra-remeda';
 
-import type {JSONPublication} from '../types/types';
+import type {Author, JSONPublication} from '../types/types';
 
 const getPublicationTitle = (publication: JSONPublication) => R.pipe(
 	publication?.PubmedArticleSet,
@@ -20,6 +20,19 @@ const getPublicationAbstract = (publication: JSONPublication) => R.pipe(
 	defaultToEmptyString,
 );
 
+const getAuthors = (publication: JSONPublication) => {
+	const authors = publication?.PubmedArticleSet?.PubmedArticle?.MedlineCitation['#content']
+		?.Article['#content'].AuthorList['#content']?.Author;
+
+	const result: Author[] = authors.map(eachAuthor => ({
+		foreName: eachAuthor['#content'].ForeName as string,
+		lastName: eachAuthor['#content'].LastName as string,
+		affilitation: eachAuthor['#content'].AffiliationInfo.Affiliation as string,
+	} as Author));
+
+	return result;
+};
+
 const getPublicationDate = (publication: JSONPublication) => {
 	const parsedDate: {Day: string; Month: string; Year: string} = R.pipe(
 		publication?.PubmedArticleSet,
@@ -34,7 +47,7 @@ const getPublicationDate = (publication: JSONPublication) => {
 
 	const date: {Day: number; Month: number; Year: number} = R.mapValues(
 		parsedDate,
-		value => Number.parseInt(value),
+		value => Number.parseInt(value, 10),
 	);
 
 	const publicationDate = new Date(
@@ -42,7 +55,7 @@ const getPublicationDate = (publication: JSONPublication) => {
 		date.Month - 1,
 		date.Day,
 	);
-	return publicationDate;
+	return publicationDate.getTime();
 };
 
-export {getPublicationAbstract, getPublicationDate, getPublicationTitle};
+export {getAuthors, getPublicationAbstract, getPublicationDate, getPublicationTitle};

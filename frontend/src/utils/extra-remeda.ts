@@ -14,15 +14,15 @@ function containsNumbers(charSequence: string) {
 	return /\d/.test(charSequence);
 }
 
-function lengthOf(someArray: [] | string) {
+function lengthOf(someArray: string[] | string) {
 	return someArray.length;
 }
 
-function isEmptyArray(someArray: []) {
+function isEmptyArray(someArray: any[]) {
 	return R.isArray(someArray) && R.equals(0, lengthOf(someArray));
 }
 
-function isNotEmptyArray(someArray: []) {
+function isNotEmptyArray(someArray: any[]) {
 	return !isEmptyArray(someArray);
 }
 
