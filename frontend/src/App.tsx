@@ -122,6 +122,7 @@ function SearchView() {
 	return (
 		<div style={style}>
 			<SearchForm />
+			<SkillForm />
 		</div>
 	);
 }
