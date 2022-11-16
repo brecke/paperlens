@@ -14,6 +14,7 @@ type Publication = {
 	date: number;
 	title: string;
 	body?: string;
+	pubmedId: string;
 };
 
 type JSONPublication = {
@@ -21,6 +22,7 @@ type JSONPublication = {
 		PubmedArticle: {
 			MedlineCitation: {
 				'#content': {
+					PMID: {'#content': string};
 					Article: {
 						'#content': {
 							Abstract: {

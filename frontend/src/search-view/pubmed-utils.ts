@@ -20,6 +20,12 @@ const getPublicationAbstract = (publication: JSONPublication) => R.pipe(
 	defaultToEmptyString,
 );
 
+const getPubmedId = (publication: JSONPublication) => R.pipe(
+	publication?.PubmedArticleSet?.PubmedArticle?.MedlineCitation['#content']
+		?.PMID['#content'],
+	defaultToEmptyString,
+);
+
 const getAuthors = (publication: JSONPublication) => {
 	const authors = publication?.PubmedArticleSet?.PubmedArticle?.MedlineCitation['#content']
 		?.Article['#content'].AuthorList['#content']?.Author;
@@ -58,4 +64,4 @@ const getPublicationDate = (publication: JSONPublication) => {
 	return publicationDate.getTime();
 };
 
-export {getAuthors, getPublicationAbstract, getPublicationDate, getPublicationTitle};
+export {getPubmedId, getAuthors, getPublicationAbstract, getPublicationDate, getPublicationTitle};

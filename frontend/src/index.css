@@ -72,3 +72,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Custom styles */
+.btn-spaceous {
+  margin: 10px 20px 10px 20px;
+}
