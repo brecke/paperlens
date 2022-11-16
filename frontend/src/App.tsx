@@ -2,8 +2,9 @@
 import {useEffect} from 'react';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 
-import SearchForm from './search-view';
 import SkillForm from './skill-view';
+import SearchForm from './search-view';
+import PreviewForm from './preview-view';
 import Dashboard from './dashboard-view';
 
 function App() {
@@ -122,7 +123,7 @@ function SearchView() {
 	return (
 		<div style={style}>
 			<SearchForm />
-			<SkillForm />
+			<PreviewForm />
 		</div>
 	);
 }

@@ -1,13 +1,10 @@
 import type {FormEvent} from 'react';
 import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {not, keys, includes, pipe, isEmpty, concat, prop} from 'ramda';
+import {not, keys, includes} from 'ramda';
 import * as R from 'remeda';
 import {appendString,
 	defaultToEmptyString,
 	containsNumbers,
-	isEmptyArray,
-	isNotEmptyString,
 } from '../utils/extra-remeda';
 import type {JSONPublication, Publication} from '../types/types';
 import store from '../store';
@@ -16,6 +13,7 @@ import {
 	getPublicationDate,
 	getAuthors,
 	getPublicationTitle,
+	getPubmedId,
 } from './pubmed-utils';
 
 const FORM_STATE = {
@@ -36,7 +34,6 @@ const aintValid = (endpoint: string) =>
 	!(includes(endpoint, keys(PUBMED_ENDPOINTS)), not);
 
 function SearchForm() {
-	const navigate = useNavigate();
 	const [search, setSearch] = useState('');
 	const [publication, setPublication] = useState({
 		title: '',
@@ -73,22 +70,15 @@ function SearchForm() {
 				authors: getAuthors(response),
 				date: getPublicationDate(response),
 				abstract: getPublicationAbstract(response),
+				pubmedId: getPubmedId(response),
 			};
 			// TODO: we won't need to set component state once we have redux in place
 			setPublication(publication);
 
 			// TODO extract from response
-			const pubmedId = '24960035';
+			// const pubmedId = '24960035';
 
 			store.dispatch({type: 'search/publicationSelected', payload: publication});
-
-			/*
-			Navigate(
-				{
-					pathname: `/publication/${pubmedId}`,
-				},
-			);
-			*/
 		} catch {
 			setStatus(FORM_STATE.error);
 		}
@@ -117,19 +107,15 @@ function SearchForm() {
 					<label className='label'>
 						<span className='label-text'>Find a paper by title on pubmed</span>
 					</label>
-					<input
-						type='text'
-						placeholder='Insert paper title or PMID e.g. In vitro ischemia...'
-						className='input input-bordered input-lg w-full max-w-xs'
-						value={search}
-						onChange={handleChange}
-					/>
-					<input
-						type='submit'
-						value='Search'
-						className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg'
-						disabled={whileSubmitting()}
-					/>
+					<div className='form-control'>
+						<div className='input-group'>
+							<input type='text' onChange={handleChange} placeholder='Insert paper title or PMID e.g. In vitro ischemia...' className='input input-bordered input-lg w-full max-w-xs' />
+							<button className='btn btn-square lg:btn-lg' disabled={whileSubmitting()} onClick={handleSubmit}>
+								<svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /></svg>
+							</button>
+						</div>
+					</div>
+
 				</div>
 			</form>
 		</>

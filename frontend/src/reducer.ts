@@ -3,6 +3,7 @@ import {combineReducers} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 import type {Publication} from './types/types';
 import searchReducer from './features/search/search-slice';
+import skillsReducer from './features/skills/skills-slice';
 
 const rootReducer = combineReducers({
 	/**
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
 	 * key names of your state object will be!
 	 */
 	search: searchReducer,
+	skills: skillsReducer,
 });
 
 export default rootReducer;
