@@ -8,6 +8,7 @@ import {appendString,
 } from '../utils/extra-remeda';
 import type {JSONPublication, Publication} from '../types/types';
 import store from '../store';
+import PreviewForm from '../preview-view/index';
 import {
 	getPublicationAbstract,
 	getPublicationDate,
@@ -35,12 +36,15 @@ const aintValid = (endpoint: string) =>
 
 function SearchForm() {
 	const [search, setSearch] = useState('');
+	/*
 	const [publication, setPublication] = useState({
 		title: '',
 		abstract: '',
 		authors: [],
 		date: 0,
+		pubmedId: '',
 	} as Publication);
+	*/
 	const [status, setStatus] = useState(FORM_STATE.quiet);
 
 	function whileSubmitting() {
@@ -73,7 +77,7 @@ function SearchForm() {
 				pubmedId: getPubmedId(response),
 			};
 			// TODO: we won't need to set component state once we have redux in place
-			setPublication(publication);
+			// setPublication(publication);
 
 			// TODO extract from response
 			// const pubmedId = '24960035';
@@ -118,8 +122,7 @@ function SearchForm() {
 
 				</div>
 			</form>
-		</>
-	);
+		</>);
 }
 
 export default SearchForm;

@@ -1,23 +1,31 @@
 import type {PayloadAction} from '@reduxjs/toolkit';
-import {clone, find, concat, pipe, reject, sortBy, set} from 'remeda';
-import type {Publication} from '../../types/types';
+import {clone, find, concat, pipe, reject, sortBy} from 'remeda';
+import type {Skill} from '../../types/types';
 
-const initialState = [];
+const initialState: Skill[] = [];
 
 // Use the initialState as a default value
 // eslint-disable-next-line @typescript-eslint/default-param-last
 export default function skillsReducer(state = initialState, action: PayloadAction) {
 	// The reducer normally looks at the action type field to decide what happens
+
 	switch (action.type) {
 		// Do something here based on the different types of actions
 		case 'skills/preload': {
-			return sortBy(action.payload, x => x.name);
+			return sortBy(action.payload, (skill: Skill) => skill.name);
 		}
 
 		case 'skills/skillPicked': {
-			const skill = pipe(state, find(each => each.id === Number.parseInt(action.payload)), clone);
+			const theSameIdAsPayload = (each: Skill) => each.id === Number.parseInt(action.payload, 10);
+			const skill: Skill | undefined = pipe(state, find(theSameIdAsPayload), clone);
+
+			if (!skill) {
+				return state;
+			}
+
 			skill.selected = !skill.selected;
-			const newState = pipe(state, reject(each => each.id === Number.parseInt(action.payload)), concat([skill]), sortBy(x => x.name));
+
+			const newState = pipe(state, reject(theSameIdAsPayload), concat([skill]), sortBy((skill: Skill) => skill.name!));
 
 			return newState;
 		}
