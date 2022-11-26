@@ -4,6 +4,12 @@ type Author = {
 	affilitation: Organization;
 };
 
+type Skill = {
+	id?: number;
+	name?: string;
+	selected?: boolean;
+};
+
 type Organization = {
 	name: string;
 };
@@ -45,5 +51,5 @@ type JSONPublication = {
 };
 
 export type {
-	Publication, Author, Organization, JSONPublication,
+	Publication, Skill, Author, Organization, JSONPublication,
 };

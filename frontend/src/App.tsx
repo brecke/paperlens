@@ -4,6 +4,7 @@ import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 
 import SkillForm from './skill-view';
 import SearchForm from './search-view';
+import Wizard from './wizard';
 import PreviewForm from './preview-view';
 import Dashboard from './dashboard-view';
 
@@ -122,8 +123,7 @@ function SearchView() {
 	const style = {class: 'container mx-auto', padding: '8px'};
 	return (
 		<div style={style}>
-			<SearchForm />
-			<PreviewForm />
+			<Wizard />
 		</div>
 	);
 }

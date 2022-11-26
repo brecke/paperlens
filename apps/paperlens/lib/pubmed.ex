@@ -44,6 +44,8 @@ defmodule Pubmed do
       Finch.build(:get, url)
       |> Finch.request(MyFinch)
       |> extract_body()
+      # this bit makes the xml invalid and unparsable :(
+      |> String.replace("<b>Competing Interests: </b>", "")
       |> XmlToMap.naive_map()
 
     paper_data
