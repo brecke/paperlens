@@ -41,6 +41,11 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -74,10 +79,10 @@ button:focus-visible {
 }
 
 /* Custom styles */
-.btn-spaceous {
+.btn-spacious {
   margin: 10px 20px 10px 20px;
 }
 
-ul.spaceous {
+ul.spacious {
   margin-bottom: 40px;
 }

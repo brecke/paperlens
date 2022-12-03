@@ -11,6 +11,7 @@ import {appendString,
 } from '../utils/extra-remeda';
 import type {Author, Publication} from '../types/types';
 import store from '../store';
+import ValidatorPick from '../validator-pick';
 import AuthorPick from '../author-pick';
 import PreviewForm from '../preview-view/index';
 import SearchForm from '../search-view';
@@ -120,7 +121,10 @@ function Wizard() {
 	}
 
 	function renderPeersPick() {
-		return (<><h1>Pick your peers</h1></>);
+		return (
+			<>
+				<ValidatorPick/>
+			</>);
 	}
 
 	function renderSkillClaim() {
@@ -163,7 +167,7 @@ function Wizard() {
 
 	return (
 		<>
-			<ul className='steps steps-vertical lg:steps-horizontal spaceous'>
+			<ul className='steps steps-vertical lg:steps-horizontal spacious'>
 				<li onClick={handleGoToStep} data-step={STEPS[0]} className='step step-primary'>Search for a publication</li>
 				<li onClick={handleGoToStep} data-step={STEPS[1]} className={highlightStepTwo() ? 'step step-primary' : 'step'}>Identify as author</li>
 				<li onClick={handleGoToStep} data-step={STEPS[2]} className={highlightStepThree() ? 'step step-primary' : 'step'}>Claim skills</li>

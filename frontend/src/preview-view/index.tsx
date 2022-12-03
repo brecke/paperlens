@@ -8,7 +8,7 @@ import {isEmptyString} from '../utils/extra-remeda';
 import {getFullName} from '../utils/author-utils';
 import type {RootState} from '../store';
 
-function skillForm(props) {
+function skillForm() {
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
 
 	const displayPreview = (selectedPublication: Publication) => (

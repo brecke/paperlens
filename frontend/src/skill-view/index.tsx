@@ -23,24 +23,24 @@ function SkillForm() {
 	};
 
 	useEffect(() => {
-		if (publicationSkills.length === 0) { // preload default skills
-			store.dispatch({type: 'skills/preload', payload: skills});
-		}
-	});
+		// if (publicationSkills.length === 0) { // preload default skills
+		store.dispatch({type: 'skills/preload', payload: skills});
+		// }
+	}, []);
 
 	const currentlySelected = publicationSkills.filter(each => each.selected);
 
 	return (
 		selectedPublication.title && (<>
+			<h1>Pick your contributions for this publication</h1>
 			<h2>{selectedPublication.title}</h2>
-			<ul>
+			<ul className='spacious'>
 				<li>PubmedID: {selectedPublication.pubmedId}</li>
 				<li>Date: { format(new Date(selectedPublication.date), 'MM/dd/yyy')}</li>
 			</ul>
 			<div>
-				<h2>Claimable skills:</h2>
 				{publicationSkills.map(eachSkill => (
-					<button key={eachSkill.id} onClick={pickSkill} data-id={eachSkill.id} className={ eachSkill.selected ? 'btn btn-spaceous btn-accent' : 'btn btn-spaceous btn-outline'}>{eachSkill.name}</button>
+					<button key={eachSkill.id} onClick={pickSkill} data-id={eachSkill.id} className={ eachSkill.selected ? 'btn btn-spacious btn-accent' : 'btn btn-spacious btn-outline'}>{eachSkill.name}</button>
 				))}
 			</div>
 			<p>You have selected {currentlySelected.length} skills for this publication.</p>
