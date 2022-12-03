@@ -31,10 +31,9 @@ function AuthorPick() {
 	return (
 		<>
 			<h1>Identify yourself among all authors:</h1>
-			{
-				selectedPublication.authors.map((eachAuthor: Author) => (
-					<article className='prose'>
-
+			<article className='prose'>
+				{
+					selectedPublication.authors.map((eachAuthor: Author) => (
 						<div className='form-control' key={getFullName(eachAuthor)}>
 							<label className='label cursor-pointer'>
 								<input type='radio' checked={matchesSelectedAuthor(getFullName(eachAuthor))} name='radio-10' onChange={authorSelected} data-selectedauthor={getFullName(eachAuthor)} className='radio checked:bg-blue-500'>
@@ -43,9 +42,9 @@ function AuthorPick() {
 								<span className='label-text'>{getFullName(eachAuthor)}</span>
 							</label>
 						</div>
-					</article>
-				))
-			}
+					))
+				}
+			</article>
 		</>
 	);
 }

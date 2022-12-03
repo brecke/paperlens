@@ -31,7 +31,8 @@ function SkillForm() {
 	const currentlySelected = publicationSkills.filter(each => each.selected);
 
 	return (
-		selectedPublication.title && (<>
+		<>
+		selectedPublication.title && (
 			<h1>Pick your contributions for this publication</h1>
 			<h2>{selectedPublication.title}</h2>
 			<ul className='spacious'>
@@ -44,7 +45,8 @@ function SkillForm() {
 				))}
 			</div>
 			<p>You have selected {currentlySelected.length} skills for this publication.</p>
-		</>));
+		</>
+	);
 }
 
 export default SkillForm;

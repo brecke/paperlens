@@ -58,6 +58,7 @@ function Wizard() {
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
 	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
 	const publicationSkills = useSelector(state => state.skills as Skill[]);
+	const selectedPeers: Author[] = useSelector((state: RootState) => state.search.selectedPeers as Author[]);
 	const currentlySelected = publicationSkills.filter(each => each.selected);
 
 	const handleGoToStep = (event: FormEvent) => {
@@ -124,13 +125,14 @@ function Wizard() {
 		return (
 			<>
 				<ValidatorPick/>
+				{displayNextButton()}
 			</>);
 	}
 
 	function renderSkillClaim() {
 		return (
 			<>
-				<SkillForm></SkillForm>
+				<SkillForm/>
 				{displayNextButton()}
 			</>
 		);
@@ -142,6 +144,8 @@ function Wizard() {
 		{currentStep === STEPS[1] && selectedAuthor?.foreName && <button className='btn btn-wide' onClick={goToNextStep}>Next</button>}
 
 		{currentStep === STEPS[2] && isNotEmptyArray(currentlySelected) && <button className='btn btn-wide' onClick={goToNextStep}>Next</button>}
+
+		{currentStep === STEPS[3] && selectedPeers.length === 3 && <button className='btn btn-wide' onClick={goToNextStep}>Next</button>}
 	</>);
 
 	function renderSearch() {

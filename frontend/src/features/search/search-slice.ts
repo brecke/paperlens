@@ -1,6 +1,7 @@
 import type {PayloadAction} from '@reduxjs/toolkit';
-import {concat} from 'remeda';
+import {concat, reject} from 'remeda';
 import type {Author, Publication} from '../../types/types';
+import {getFullName} from '../../utils/author-utils';
 
 const selectedPublication: Publication = {body: '', title: '', date: 0, abstract: '', authors: [], pubmedId: ''};
 const selectedPeers: Author[] = [];
@@ -11,6 +12,16 @@ const initialState = {selectedPublication, selectedPeers};
 export default function searchReducer(state = initialState, action: PayloadAction) {
 	// The reducer normally looks at the action type field to decide what happens
 	switch (action.type) {
+		case 'search/peerDeselected': {
+			let selectedPeers: Author[] = state.selectedPeers ?? [];
+			selectedPeers = reject(selectedPeers, peer => getFullName(peer) === getFullName(action.payload));
+
+			return {
+				...state,
+				selectedPeers,
+			};
+		}
+
 		case 'search/peerSelected': {
 			let selectedPeers: Author[] = state.selectedPeers ?? [];
 			selectedPeers = [...selectedPeers, action.payload];

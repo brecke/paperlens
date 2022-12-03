@@ -19,10 +19,20 @@ function ValidatorPick() {
 
 	function peerSelected(event: FormEvent) {
 		const authorClickedOn = (event.currentTarget as HTMLInputElement).dataset.selectedauthor;
+
 		// TODO remove dup
 		const nameMatchesSelectedRadio = (eachPublicationAuthor: Author) => equals(getFullName(eachPublicationAuthor), authorClickedOn);
-		const author: Author | undefined = find(selectedPublication.authors, nameMatchesSelectedRadio);
-		store.dispatch({type: 'search/peerSelected', payload: author});
+
+		const author: Author = find(selectedPublication.authors, nameMatchesSelectedRadio)!;
+
+		if (!author) {
+			return;
+		}
+
+		let selectedPeerAction = '';
+		selectedPeerAction = (event.currentTarget as HTMLInputElement).checked ? 'search/peerSelected' : 'search/peerDeselected';
+
+		store.dispatch({type: selectedPeerAction, payload: author});
 	}
 
 	function shouldBeDisabled(authorCheckbox: string) {
