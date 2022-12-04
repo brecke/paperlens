@@ -2,16 +2,15 @@ import type {FormEvent} from 'react';
 import {useState} from 'react';
 import * as R from 'remeda';
 import {useSelector} from 'react-redux';
-import {equals, pipe} from 'remeda';
-import {appendString,
-	defaultToEmptyString,
-	containsNumbers,
+import {equals} from 'remeda';
+import {
 	isNotEmptyArray,
 	isNotEmptyString,
 } from '../utils/extra-remeda';
 import type {Author, Publication} from '../types/types';
 import store from '../store';
 import type {RootState} from '../store';
+import postData from '../http/fetch-post-data';
 import SkillForm from './skill-view';
 import AuthorPick from './author-pick';
 import PreviewForm from './preview-view/index';
@@ -72,10 +71,21 @@ function Wizard() {
 			case STEPS[3]:
 				setStep(STEPS[4]);
 				break;
+			case STEPS[4]:
+				return submitClaim();
 			default:
 				break;
 		}
 	};
+
+	async function submitClaim() {
+		await postData('/api/claim', {selectedAuthor, selectedPeers, selectedPublication})
+			.then(data => {
+				console.log(data); // JSON data parsed by `data.json()` call
+			});
+
+		store.dispatch({type: 'search/clean'});
+	}
 
 	function renderAuthorPick() {
 		return (

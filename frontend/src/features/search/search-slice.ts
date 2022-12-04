@@ -13,6 +13,7 @@ const initialState = {selectedPublication, selectedPeers, selectedAuthor};
 export default function searchReducer(state = initialState, action: PayloadAction) {
 	// The reducer normally looks at the action type field to decide what happens
 	switch (action.type) {
+		case 'search/clean': return {selectedPeers, selectedAuthor, selectedPublication};
 		case 'search/peerDeselected': {
 			let selectedPeers: Author[] = state.selectedPeers ?? [];
 			selectedPeers = reject(selectedPeers, peer => getFullName(peer) === getFullName(action.payload));

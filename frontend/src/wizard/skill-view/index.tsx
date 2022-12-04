@@ -30,21 +30,22 @@ function SkillForm() {
 
 	return (
 		<>
-		selectedPublication.title && (
-			<h1>Pick your contributions for this publication</h1>
-			<h2>{selectedPublication.title}</h2>
-			<ul className='spacious'>
-				<li>PubmedID: {selectedPublication.pubmedId}</li>
-				<li>Date: { format(new Date(selectedPublication.date), 'MM/dd/yyy')}</li>
-			</ul>
-			<div>
-				{publicationSkills.map(eachSkill => (
-					<button key={eachSkill.id} onClick={pickSkill} data-id={eachSkill.id} className={ eachSkill.selected ? 'btn btn-spacious btn-accent' : 'btn btn-spacious btn-outline'}>{eachSkill.name}</button>
-				))}
-			</div>
-			<p>You have selected {currentlySelected.length} skills for this publication.</p>
-		</>
-	);
+			{selectedPublication.title && (<>
+				<h1>Pick your contributions for this publication</h1>
+				<h2>{selectedPublication.title}</h2>
+				<ul className='spacious'>
+					<li>PubmedID: {selectedPublication.pubmedId}</li>
+					<li>Date: { format(new Date(selectedPublication.date), 'MM/dd/yyy')}</li>
+				</ul>
+				<div>
+					{publicationSkills.map(eachSkill => (
+						<button key={eachSkill.id} onClick={pickSkill} data-id={eachSkill.id} className={ eachSkill.selected ? 'btn btn-spacious btn-accent' : 'btn btn-spacious btn-outline'}>{eachSkill.name}</button>
+					))}
+				</div>
+				<p>You have selected {currentlySelected.length} skills for this publication.</p>
+			</>
+			)}
+		</>);
 }
 
 export default SkillForm;

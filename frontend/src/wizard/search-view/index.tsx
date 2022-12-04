@@ -36,15 +36,6 @@ const aintValid = (endpoint: string) =>
 
 function SearchForm() {
 	const [search, setSearch] = useState('');
-	/*
-	const [publication, setPublication] = useState({
-		title: '',
-		abstract: '',
-		authors: [],
-		date: 0,
-		pubmedId: '',
-	} as Publication);
-	*/
 	const [status, setStatus] = useState(FORM_STATE.quiet);
 
 	function whileSubmitting() {
@@ -57,7 +48,7 @@ function SearchForm() {
 		setSearch(value);
 	}
 
-	async function fetchFromPubmed(endpoint: 'fetch' | 'search', parameters: string) {
+	async function fetchFromPubmed(endpoint: typeof FETCH | typeof SEARCH, parameters: string) {
 		if (aintValid(endpoint)) {
 			return;
 		}
@@ -76,11 +67,6 @@ function SearchForm() {
 				abstract: getPublicationAbstract(response),
 				pubmedId: getPubmedId(response),
 			};
-			// TODO: we won't need to set component state once we have redux in place
-			// setPublication(publication);
-
-			// TODO extract from response
-			// const pubmedId = '24960035';
 
 			store.dispatch({type: 'search/publicationSelected', payload: publication});
 		} catch {

@@ -21,13 +21,13 @@ function Summary() {
 				<p>Contributions:</p>
 				<ul>
 					{publicationSkills.filter(eachPublication => eachPublication.selected).map(eachSkill => (
-						<li> { eachSkill.name}</li>
+						<li key={eachSkill.name}> { eachSkill.name}</li>
 					)) }
 				</ul>
 				<p>Validating peers:</p>
 				<ul>
 					{selectedPeers.map(eachPeer => (
-						<li>{ getFullName(eachPeer) }</li>
+						<li key={getFullName(eachPeer)}>{ getFullName(eachPeer) }</li>
 					))}
 				</ul>
 			</article>
