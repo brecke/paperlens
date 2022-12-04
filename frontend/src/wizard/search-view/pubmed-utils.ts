@@ -1,7 +1,7 @@
 import * as R from 'remeda';
-import {defaultToEmptyString} from '../utils/extra-remeda';
+import {defaultToEmptyString} from '../../utils/extra-remeda';
 
-import type {Author, JSONPublication} from '../types/types';
+import type {Author, JSONPublication} from '../../types/types';
 
 const getPublicationTitle = (publication: JSONPublication) => R.pipe(
 	publication?.PubmedArticleSet,

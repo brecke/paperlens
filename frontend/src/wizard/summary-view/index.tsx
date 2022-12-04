@@ -1,8 +1,8 @@
 import {useSelector} from 'react-redux';
-import {getFullName} from '../utils/author-utils';
+import {getFullName} from '../../utils/author-utils';
 
-import type {Author, Publication} from '../types/types';
-import type {RootState} from '../store';
+import type {Author, Publication} from '../../types/types';
+import type {RootState} from '../../store';
 
 function Summary() {
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);

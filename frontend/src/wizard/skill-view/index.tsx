@@ -2,11 +2,11 @@ import type {FormEvent} from 'react';
 import {useEffect, useState} from 'react';
 import {formatDistance, format} from 'date-fns';
 import {useSelector} from 'react-redux';
-import store from '../store';
-import type {Skill, Publication} from '../types/types';
-import {isEmptyString} from '../utils/extra-remeda';
-import {getFullName} from '../utils/author-utils';
-import type {RootState} from '../store';
+import store from '../../store';
+import type {Skill, Publication} from '../../types/types';
+import {isEmptyString} from '../../utils/extra-remeda';
+import {getFullName} from '../../utils/author-utils';
+import type {RootState} from '../../store';
 
 function SkillForm() {
 	const skills: Skill[] = [{id: 1, name: 'Funding acquisition', selected: false}, {id: 2, name: 'Western blot', selected: false}, {id: 3, name: 'CRISPR-cas9', selected: false}, {id: 4, name: 'Microscopy', selected: false}, {id: 5, name: 'electrophysiology', selected: false}, {id: 6, name: 'Immunoprecipitation', selected: false}, {id: 7, name: 'animal handling', selected: false}, {id: 8, name: 'statistics', selected: false}, {id: 9, name: 'imaging', selected: false}, {id: 10, name: 'general coordination', selected: false}];

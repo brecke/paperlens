@@ -12,12 +12,12 @@ import {appendString,
 import type {Author, Publication} from '../types/types';
 import store from '../store';
 import type {RootState} from '../store';
-import ValidatorPick from '../validator-pick';
-import AuthorPick from '../author-pick';
-import PreviewForm from '../preview-view/index';
-import SearchForm from '../search-view';
-import SkillForm from '../skill-view';
-import Summary from '../summary-view';
+import SkillForm from './skill-view';
+import AuthorPick from './author-pick';
+import PreviewForm from './preview-view/index';
+import SearchForm from './search-view';
+import Summary from './summary-view';
+import ValidatorPick from './validator-pick';
 
 const FORM_STATE = {
 	quiet: 0,

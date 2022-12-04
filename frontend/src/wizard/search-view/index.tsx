@@ -5,9 +5,9 @@ import * as R from 'remeda';
 import {appendString,
 	defaultToEmptyString,
 	containsNumbers,
-} from '../utils/extra-remeda';
-import type {JSONPublication, Publication} from '../types/types';
-import store from '../store';
+} from '../../utils/extra-remeda';
+import type {JSONPublication, Publication} from '../../types/types';
+import store from '../../store';
 import PreviewForm from '../preview-view/index';
 import {
 	getPublicationAbstract,

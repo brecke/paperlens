@@ -2,10 +2,10 @@
 import {useEffect} from 'react';
 import {BrowserRouter, Link, Routes, Route} from 'react-router-dom';
 
-import SkillForm from './skill-view';
-import SearchForm from './search-view';
+import SkillForm from './wizard/skill-view';
+import SearchForm from './wizard/search-view';
 import Wizard from './wizard';
-import PreviewForm from './preview-view';
+import PreviewForm from './wizard/preview-view';
 import Dashboard from './dashboard-view';
 
 function App() {
