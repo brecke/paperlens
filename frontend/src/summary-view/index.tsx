@@ -1,19 +1,12 @@
-import type {FormEvent} from 'react';
-import {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
-import store from '../store';
-import {isEmptyString} from '../utils/extra-remeda';
 import {getFullName} from '../utils/author-utils';
 
-import type {Skill, Author, Publication} from '../types/types';
+import type {Author, Publication} from '../types/types';
 import type {RootState} from '../store';
 
 function Summary() {
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
-
 	const selectedPeers: Author[] = useSelector((state: RootState) => state.search.selectedPeers as Author[]);
-
 	const publicationSkills = useSelector((state: RootState) => state.skills);
 	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
 
