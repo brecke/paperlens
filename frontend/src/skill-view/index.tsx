@@ -1,9 +1,7 @@
 import type {FormEvent} from 'react';
 import {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 import {formatDistance, format} from 'date-fns';
 import {useSelector} from 'react-redux';
-import {equals, find} from 'remeda';
 import store from '../store';
 import type {Skill, Publication} from '../types/types';
 import {isEmptyString} from '../utils/extra-remeda';
