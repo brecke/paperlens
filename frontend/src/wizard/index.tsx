@@ -1,14 +1,12 @@
 import type {FormEvent} from 'react';
 import {useState} from 'react';
-import * as R from 'remeda';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {equals} from 'remeda';
 import {
 	isNotEmptyArray,
 	isNotEmptyString,
 } from '../utils/extra-remeda';
 import type {Author, Publication} from '../types/types';
-import store from '../store';
 import type {RootState} from '../store';
 import postData from '../http/fetch-post-data';
 import SkillForm from './skill-view';
@@ -45,6 +43,8 @@ const isThree = (x: number) => equals(3, x);
 function Wizard() {
 	const [currentStep, setStep] = useState(STEPS[0]);
 	const [status, setStatus] = useState(FORM_STATE.quiet);
+
+	const dispatch = useDispatch();
 
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
 	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
@@ -84,7 +84,7 @@ function Wizard() {
 				console.log(data); // JSON data parsed by `data.json()` call
 			});
 
-		store.dispatch({type: 'search/clean'});
+		dispatch({type: 'search/clean'});
 	}
 
 	function renderAuthorPick() {

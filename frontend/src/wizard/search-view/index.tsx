@@ -2,13 +2,12 @@ import type {FormEvent} from 'react';
 import {useState} from 'react';
 import {not, keys, includes} from 'ramda';
 import * as R from 'remeda';
+import {useDispatch} from 'react-redux';
 import {appendString,
 	defaultToEmptyString,
 	containsNumbers,
 } from '../../utils/extra-remeda';
 import type {JSONPublication, Publication} from '../../types/types';
-import store from '../../store';
-import PreviewForm from '../preview-view/index';
 import {
 	getPublicationAbstract,
 	getPublicationDate,
@@ -37,6 +36,8 @@ const aintValid = (endpoint: string) =>
 function SearchForm() {
 	const [search, setSearch] = useState('');
 	const [status, setStatus] = useState(FORM_STATE.quiet);
+
+	const dispatch = useDispatch();
 
 	function whileSubmitting() {
 		return R.equals(FORM_STATE.submitting, status);
@@ -68,7 +69,7 @@ function SearchForm() {
 				pubmedId: getPubmedId(response),
 			};
 
-			store.dispatch({type: 'search/publicationSelected', payload: publication});
+			dispatch({type: 'search/publicationSelected', payload: publication});
 		} catch {
 			setStatus(FORM_STATE.error);
 		}

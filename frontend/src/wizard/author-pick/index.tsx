@@ -2,17 +2,18 @@ import type {FormEvent} from 'react';
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {formatDistance} from 'date-fns';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {equals, find} from 'remeda';
 import * as R from 'remeda';
 import type {Author, Publication} from '../../types/types';
 import {getFullName} from '../../utils/author-utils';
 import type {RootState} from '../../store';
-import store from '../../store';
 
 function AuthorPick() {
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
 	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
+
+	const dispatch = useDispatch();
 
 	const authorSelected = (event: FormEvent) => {
 		const authorClickedOn = (event.currentTarget as HTMLInputElement).dataset.selectedauthor;
@@ -21,7 +22,7 @@ function AuthorPick() {
 		const nameMatchesSelectedRadio = (eachPublicationAuthor: Author) => equals(getFullName(eachPublicationAuthor), authorClickedOn);
 		const author: Author | undefined = find(selectedPublication.authors, nameMatchesSelectedRadio);
 
-		store.dispatch({type: 'search/authorSelected', payload: author});
+		dispatch({type: 'search/authorSelected', payload: author});
 	};
 
 	function matchesSelectedAuthor(fullName: string): boolean {

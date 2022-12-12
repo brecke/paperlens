@@ -1,20 +1,15 @@
 import type {FormEvent} from 'react';
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {formatDistance} from 'date-fns';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {equals, find} from 'remeda';
-import * as R from 'remeda';
 import type {Author, Publication} from '../../types/types';
 import {getFullName} from '../../utils/author-utils';
 import type {RootState} from '../../store';
-import store from '../../store';
 
 function ValidatorPick() {
+	const dispatch = useDispatch();
+
 	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
-
 	const selectedPeers: Author[] = useSelector((state: RootState) => state.search.selectedPeers as Author[]);
-
 	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
 
 	function peerSelected(event: FormEvent) {
@@ -32,7 +27,7 @@ function ValidatorPick() {
 		let selectedPeerAction = '';
 		selectedPeerAction = (event.currentTarget as HTMLInputElement).checked ? 'search/peerSelected' : 'search/peerDeselected';
 
-		store.dispatch({type: selectedPeerAction, payload: author});
+		dispatch({type: selectedPeerAction, payload: author});
 	}
 
 	function shouldBeDisabled(authorCheckbox: string) {
