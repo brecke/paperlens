@@ -6,7 +6,7 @@ import {
 	isNotEmptyArray,
 	isNotEmptyString,
 } from '../utils/extra-remeda';
-import type {Author, Publication} from '../types/types';
+import type {Author, Skill, Publication, SearchState} from '../types/types';
 import type {RootState} from '../store';
 import postData from '../http/fetch-post-data';
 import SkillForm from './skill-view';
@@ -46,10 +46,10 @@ function Wizard() {
 
 	const dispatch = useDispatch();
 
-	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
-	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
-	const publicationSkills = useSelector(state => state.skills as Skill[]);
-	const selectedPeers: Author[] = useSelector((state: RootState) => state.search.selectedPeers as Author[]);
+	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
+	const selectedAuthor: Author = useSelector((state: RootState) => (state.search as SearchState).selectedAuthor);
+	const publicationSkills = useSelector((state: RootState) => state.skills);
+	const selectedPeers: Author[] = useSelector((state: RootState) => (state.search as SearchState).selectedPeers);
 	const currentlySelected = publicationSkills.filter(each => each.selected);
 
 	const handleGoToStep = (event: FormEvent) => {

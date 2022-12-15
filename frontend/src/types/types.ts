@@ -50,6 +50,8 @@ type JSONPublication = {
 	};
 };
 
+type SearchState = {selectedPeers: Author[]; selectedAuthor: Author; selectedPublication: Publication};
+
 export type {
-	Publication, Skill, Author, Organization, JSONPublication,
+	Publication, Skill, Author, Organization, JSONPublication, SearchState,
 };

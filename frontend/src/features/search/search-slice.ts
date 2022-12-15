@@ -16,7 +16,7 @@ export default function searchReducer(state = initialState, action: PayloadActio
 		case 'search/clean': return {selectedPeers, selectedAuthor, selectedPublication};
 		case 'search/peerDeselected': {
 			let selectedPeers: Author[] = state.selectedPeers ?? [];
-			selectedPeers = reject(selectedPeers, peer => getFullName(peer) === getFullName(action.payload));
+			selectedPeers = reject(selectedPeers, (peer: Author) => getFullName(peer) === getFullName(action.payload));
 
 			return {
 				...state,
