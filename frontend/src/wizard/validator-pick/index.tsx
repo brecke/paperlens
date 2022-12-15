@@ -1,16 +1,16 @@
 import type {FormEvent} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {equals, find} from 'remeda';
-import type {Author, Publication} from '../../types/types';
+import type {Author, Publication, SearchState} from '../../types/types';
 import {getFullName} from '../../utils/author-utils';
 import type {RootState} from '../../store';
 
 function ValidatorPick() {
 	const dispatch = useDispatch();
 
-	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
-	const selectedPeers: Author[] = useSelector((state: RootState) => state.search.selectedPeers as Author[]);
-	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
+	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
+	const selectedPeers: Author[] = useSelector((state: RootState) => (state.search as SearchState).selectedPeers);
+	const selectedAuthor: Author = useSelector((state: RootState) => (state.search as SearchState).selectedAuthor);
 
 	function peerSelected(event: FormEvent) {
 		const authorClickedOn = (event.currentTarget as HTMLInputElement).dataset.selectedauthor;

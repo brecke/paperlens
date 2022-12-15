@@ -2,13 +2,13 @@ import type {FormEvent} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {equals, find} from 'remeda';
 import * as R from 'remeda';
-import type {Author, Publication} from '../../types/types';
+import type {Author, Publication, SearchState} from '../../types/types';
 import {getFullName} from '../../utils/author-utils';
 import type {RootState} from '../../store';
 
 function AuthorPick() {
-	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
-	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
+	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
+	const selectedAuthor: Author = useSelector((state: RootState) => (state.search as SearchState).selectedAuthor);
 
 	const dispatch = useDispatch();
 

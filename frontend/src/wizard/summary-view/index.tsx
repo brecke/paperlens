@@ -1,14 +1,14 @@
 import {useSelector} from 'react-redux';
 import {getFullName} from '../../utils/author-utils';
 
-import type {Author, Publication} from '../../types/types';
+import type {Author, Publication, SearchState} from '../../types/types';
 import type {RootState} from '../../store';
 
 function Summary() {
-	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
-	const selectedPeers: Author[] = useSelector((state: RootState) => state.search.selectedPeers as Author[]);
+	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
+	const selectedPeers: Author[] = useSelector((state: RootState) => (state.search as SearchState).selectedPeers);
 	const publicationSkills = useSelector((state: RootState) => state.skills);
-	const selectedAuthor: Author = useSelector((state: RootState) => state.search.selectedAuthor as Author);
+	const selectedAuthor: Author = useSelector((state: RootState) => (state.search as SearchState).selectedAuthor);
 
 	return (
 		<>

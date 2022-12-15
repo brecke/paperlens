@@ -1,8 +1,8 @@
 import type {FormEvent} from 'react';
 import {useEffect} from 'react';
 import {format} from 'date-fns';
-import {useSelector, useDispatch} from 'react-redux';
-import type {Skill, Publication} from '../../types/types';
+import {useSelector, useDispatch, shallowEqual} from 'react-redux';
+import type {Skill, Publication, SearchState} from '../../types/types';
 import type {RootState} from '../../store';
 
 function SkillForm() {
@@ -10,9 +10,8 @@ function SkillForm() {
 
 	const skills: Skill[] = [{id: 1, name: 'Funding acquisition', selected: false}, {id: 2, name: 'Western blot', selected: false}, {id: 3, name: 'CRISPR-cas9', selected: false}, {id: 4, name: 'Microscopy', selected: false}, {id: 5, name: 'electrophysiology', selected: false}, {id: 6, name: 'Immunoprecipitation', selected: false}, {id: 7, name: 'animal handling', selected: false}, {id: 8, name: 'statistics', selected: false}, {id: 9, name: 'imaging', selected: false}, {id: 10, name: 'general coordination', selected: false}];
 
-	const publicationSkills = useSelector((state: RootState) => state.skills);
-
-	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
+	const publicationSkills: Skill[] = useSelector((state: RootState) => state.skills, shallowEqual);
+	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
 
 	const pickSkill = (event: FormEvent) => {
 		const skillId = (event.currentTarget as HTMLInputElement).dataset.id;

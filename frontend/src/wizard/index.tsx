@@ -1,6 +1,6 @@
 import type {FormEvent} from 'react';
 import {useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector, useDispatch, shallowEqual} from 'react-redux';
 import {equals} from 'remeda';
 import {
 	isNotEmptyArray,
@@ -48,9 +48,8 @@ function Wizard() {
 
 	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
 	const selectedAuthor: Author = useSelector((state: RootState) => (state.search as SearchState).selectedAuthor);
-	const publicationSkills = useSelector((state: RootState) => state.skills);
-	const selectedPeers: Author[] = useSelector((state: RootState) => (state.search as SearchState).selectedPeers);
-	const currentlySelected = publicationSkills.filter(each => each.selected);
+	const currentlySelectedSkills = useSelector((state: RootState) => state.skills.filter(each => each.selected));
+	const selectedPeers: Author[] = useSelector((state: RootState) => (state.search as SearchState).selectedPeers, shallowEqual);
 
 	const handleGoToStep = (event: FormEvent) => {
 		const step = (event.currentTarget as HTMLInputElement).dataset.step!;
@@ -139,7 +138,7 @@ function Wizard() {
 		switch (true) {
 			case currentStep === STEPS[0] && isNotEmptyString(selectedPublication?.title): return displayNextButton();
 			case currentStep === STEPS[1] && isNotEmptyString(selectedAuthor?.foreName): return displayNextButton();
-			case currentStep === STEPS[2] && isNotEmptyArray(currentlySelected): return (displayNextButton());
+			case currentStep === STEPS[2] && isNotEmptyArray(currentlySelectedSkills): return (displayNextButton());
 			case currentStep === STEPS[3] && isThree(selectedPeers.length): return (displayNextButton());
 			case currentStep === STEPS[4]: return displayNextButton();
 			default:

@@ -1,15 +1,11 @@
-import type {FormEvent} from 'react';
-import {useState} from 'react';
 import {formatDistance} from 'date-fns';
 import {useSelector} from 'react-redux';
-import {equals, find} from 'remeda';
-import type {Author, Publication} from '../../types/types';
+import type {SearchState, Publication} from '../../types/types';
 import {isEmptyString} from '../../utils/extra-remeda';
-import {getFullName} from '../../utils/author-utils';
 import type {RootState} from '../../store';
 
 function skillForm() {
-	const selectedPublication: Publication = useSelector((state: RootState) => state.search.selectedPublication as Publication);
+	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
 
 	const displayPreview = (selectedPublication: Publication) => (
 		<>
