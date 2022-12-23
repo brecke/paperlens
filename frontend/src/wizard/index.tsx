@@ -1,10 +1,11 @@
 import type {FormEvent} from 'react';
 import {useState} from 'react';
 import {useSelector, useDispatch, shallowEqual} from 'react-redux';
-import {equals} from 'remeda';
+import * as R from 'remeda';
 import {
 	isNotEmptyArray,
 	isNotEmptyString,
+	increment,
 } from '../utils/extra-remeda';
 import type {Author, Skill, Publication, SearchState} from '../types/types';
 import type {RootState} from '../store';
@@ -30,7 +31,15 @@ const PUBMED_ENDPOINTS = {
 	search: '/api/search?term=',
 };
 
-const STEPS = {
+type stepsType = {
+	0: string;
+	1: string;
+	2: string;
+	3: string;
+	4: string;
+};
+
+const STEPS: stepsType = {
 	0: 'SEARCH',
 	1: 'PICK_AUTHOR',
 	2: 'CLAIM',
@@ -38,7 +47,7 @@ const STEPS = {
 	4: 'SUMMARY',
 };
 
-const isThree = (x: number) => equals(3, x);
+const isThree = (x: number) => R.equals(3, x);
 
 function Wizard() {
 	const [currentStep, setStep] = useState(STEPS[0]);
@@ -161,16 +170,22 @@ function Wizard() {
 		return currentStep === STEPS[4];
 	}
 
+	function getStepIndex(step: string) {
+		return R.pipe(STEPS, R.keys, R.findIndex((eachKey: number) => R.prop(eachKey)(STEPS) === step), increment);
+	}
+
 	return (
 		<>
-			<ul className='steps steps-vertical lg:steps-horizontal spacious'>
-				<li onClick={handleGoToStep} data-step={STEPS[0]} className='step step-primary'>Search for a publication</li>
-				<li onClick={handleGoToStep} data-step={STEPS[1]} className={highlightStepTwo() ? 'step step-primary' : 'step'}>Identify as author</li>
-				<li onClick={handleGoToStep} data-step={STEPS[2]} className={highlightStepThree() ? 'step step-primary' : 'step'}>Claim skills</li>
-				<li onClick={handleGoToStep} data-step={STEPS[3]} className={highlightStepFour() ? 'step step-primary' : 'step'}>Peer validation</li>
-				<li onClick={handleGoToStep} data-step={STEPS[4]} className={highlightStepFive() ? 'step step-primary' : 'step'}>Summary</li>
-			</ul>
-			<p></p>
+			<h1>Add expertise: step { getStepIndex(currentStep) }/5</h1>
+			<div className='align-center'>
+				<ul className='steps steps-vertical lg:steps-horizontal spacious'>
+					<li onClick={handleGoToStep} data-step={STEPS[0]} className='step step-primary'>Search for a publication</li>
+					<li onClick={handleGoToStep} data-step={STEPS[1]} className={highlightStepTwo() ? 'step step-primary' : 'step'}>Identify as author</li>
+					<li onClick={handleGoToStep} data-step={STEPS[2]} className={highlightStepThree() ? 'step step-primary' : 'step'}>Claim skills</li>
+					<li onClick={handleGoToStep} data-step={STEPS[3]} className={highlightStepFour() ? 'step step-primary' : 'step'}>Peer validation</li>
+					<li onClick={handleGoToStep} data-step={STEPS[4]} className={highlightStepFive() ? 'step step-primary' : 'step'}>Summary</li>
+				</ul>
+			</div>
 			<div>
 				{ currentStep === STEPS[0] && renderSearch() }
 				{ currentStep === STEPS[1] && renderAuthorPick() }

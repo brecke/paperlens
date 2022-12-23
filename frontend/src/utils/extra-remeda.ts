@@ -34,7 +34,12 @@ function isNotEmptyString(someString: string) {
 	return !isEmptyString(someString);
 }
 
+function increment(x: number) {
+	return x + 1;
+}
+
 export {
+	increment,
 	containsNumbers,
 	appendString,
 	defaultToEmptyString,

@@ -29,8 +29,8 @@ function SkillForm() {
 	return (
 		<>
 			{selectedPublication.title && (<>
-				<h1>Pick your contributions for this publication</h1>
-				<h2>{selectedPublication.title}</h2>
+				<h2>Pick your contributions for this publication</h2>
+				<p>{selectedPublication.title}</p>
 				<ul className='spacious'>
 					<li>PubmedID: {selectedPublication.pubmedId}</li>
 					<li>Date: { format(new Date(selectedPublication.date), 'MM/dd/yyy')}</li>

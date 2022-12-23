@@ -92,7 +92,7 @@ function SearchForm() {
 
 	return (
 		<>
-			<h1>Search for a publication</h1>
+			<h2>Search for a publication</h2>
 			<form onSubmit={handleSubmit}>
 				<div className='form-control w-full max-w-xs'>
 					<label className='label'>
@@ -106,10 +106,10 @@ function SearchForm() {
 							</button>
 						</div>
 					</div>
-
 				</div>
 			</form>
-		</>);
+		</>
+	);
 }
 
 export default SearchForm;

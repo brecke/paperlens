@@ -12,7 +12,7 @@ function Summary() {
 
 	return (
 		<>
-			<h1>Please review:</h1>
+			<h2>Please review:</h2>
 			<article className='prose'>
 				<p>Publication:</p>
 				<p>{ selectedPublication.title }</p>

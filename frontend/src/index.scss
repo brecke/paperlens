@@ -39,11 +39,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 1em;
 }
 
 h2 {
   font-size: 2.2em;
   line-height: 1.1;
+  margin-bottom: 1em;
 }
 
 button {
@@ -76,4 +78,8 @@ ul.spacious {
 
 .align-right {
   text-align: right;
+}
+
+.align-center {
+  text-align: center;
 }
