@@ -28,7 +28,7 @@ function AuthorPick() {
 
 	return (
 		<>
-			<h2>Identify yourself among all authors:</h2>
+			<h2 className='text-slate-500'>Identify yourself among all authors:</h2>
 			<article className='prose'>
 				{
 					selectedPublication.authors.map((eachAuthor: Author) => (

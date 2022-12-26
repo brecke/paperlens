@@ -92,7 +92,7 @@ function SearchForm() {
 
 	return (
 		<>
-			<h2>Search for a publication</h2>
+			<h2 className='text-slate-500'>Search for a publication</h2>
 			<form onSubmit={handleSubmit}>
 				<div className='form-control w-full max-w-xs'>
 					<label className='label'>

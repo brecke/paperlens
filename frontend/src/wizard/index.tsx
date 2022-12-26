@@ -149,7 +149,7 @@ function Wizard() {
 			case currentStep === STEPS[1] && isNotEmptyString(selectedAuthor?.foreName): return displayNextButton();
 			case currentStep === STEPS[2] && isNotEmptyArray(currentlySelectedSkills): return (displayNextButton());
 			case currentStep === STEPS[3] && isThree(selectedPeers.length): return (displayNextButton());
-			case currentStep === STEPS[4]: return displayNextButton();
+			case currentStep === STEPS[4]: return (isNotEmptyString(selectedPublication?.title) && isNotEmptyString(selectedAuthor?.foreName) && isNotEmptyArray(currentlySelectedSkills) && isThree(selectedPeers.length) && displayNextButton());
 			default:
 		}
 	};
@@ -170,13 +170,9 @@ function Wizard() {
 		return currentStep === STEPS[4];
 	}
 
-	function getStepIndex(step: string) {
-		return R.pipe(STEPS, R.keys, R.findIndex((eachKey: number) => R.prop(eachKey)(STEPS) === step), increment);
-	}
-
 	return (
 		<>
-			<h1>Add expertise: step { getStepIndex(currentStep) }/5</h1>
+			<h1 className='text-slate-500'>Add expertise</h1>
 			<div className='align-center'>
 				<ul className='steps steps-vertical lg:steps-horizontal spacious'>
 					<li onClick={handleGoToStep} data-step={STEPS[0]} className='step step-primary'>Search for a publication</li>

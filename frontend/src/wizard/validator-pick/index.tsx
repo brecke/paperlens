@@ -40,7 +40,7 @@ function ValidatorPick() {
 
 	return (
 		<>
-			<h2>Pick your validation peers</h2>
+			<h2 className='text-slate-500'>Pick your validation peers</h2>
 			<article className='prose'>
 				<div className='form-control' >
 					{

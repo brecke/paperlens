@@ -10,7 +10,7 @@ function skillForm() {
 	const displayPreview = (selectedPublication: Publication) => (
 		<>
 			<article className='prose'>
-				<h1>{selectedPublication.title}</h1>
+				<h2 className='text-slate-500'>{selectedPublication.title}</h2>
 				<h3>{formatDistance(selectedPublication.date, new Date(), {addSuffix: true})}</h3>
 			</article>
 		</>

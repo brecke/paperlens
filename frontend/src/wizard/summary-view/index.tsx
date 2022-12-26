@@ -5,14 +5,21 @@ import type {Author, Publication, SearchState} from '../../types/types';
 import type {RootState} from '../../store';
 
 function Summary() {
-	const selectedPublication: Publication = useSelector((state: RootState) => (state.search as SearchState).selectedPublication);
-	const selectedPeers: Author[] = useSelector((state: RootState) => (state.search as SearchState).selectedPeers);
-	const publicationSkills = useSelector((state: RootState) => state.skills);
-	const selectedAuthor: Author = useSelector((state: RootState) => (state.search as SearchState).selectedAuthor);
+	const getSelectedPublication = (state: RootState) => (state.search as SearchState).selectedPublication;
+	const selectedPublication: Publication = useSelector(getSelectedPublication);
+
+	const getSelectedPeers = (state: RootState) => (state.search as SearchState).selectedPeers;
+	const selectedPeers: Author[] = useSelector(getSelectedPeers);
+
+	const getSkills = (state: RootState) => state.skills;
+	const publicationSkills = useSelector(getSkills);
+
+	const getSelectedAuthor = (state: RootState) => (state.search as SearchState).selectedAuthor;
+	const selectedAuthor: Author = useSelector(getSelectedAuthor);
 
 	return (
 		<>
-			<h2>Please review:</h2>
+			<h2 className='text-slate-500'>Please review:</h2>
 			<article className='prose'>
 				<p>Publication:</p>
 				<p>{ selectedPublication.title }</p>

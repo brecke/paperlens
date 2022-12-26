@@ -24,43 +24,41 @@ function App() {
 
 	return (
 		<BrowserRouter basename='app'>
-			<div className='navbar mb-2 shadow-lg bg-neutral text-neutral-content'>
-				<div className='flex-none hidden lg:flex'>
-					<button className='btn btn-square btn-ghost'>
-						<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' className='inline-block w-6 h-6 stroke-current'>
-							<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
-						</svg>
-					</button>
-				</div>
-				<div className='flex-1 hidden px-2 mx-2 lg:flex'>
+			<div className='navbar mb-2 shadow-lg bg-neutral text-neutral-content spacious-below'>
+				<div className='px-2 mx-2 navbar-start'>
 					<span className='text-lg font-bold'>
-						<Link to='/dashboard'>Dashboard</Link>
+						<Link to='/'>PaperLens</Link>
 					</span>
 				</div>
-				<div className='flex-1 lg:flex-none'>
+				<div className='hidden px-2 mx-2 navbar-center lg:flex'>
+					<div className='flex items-stretch'>
+						<a className='btn btn-ghost btn-sm rounded-btn'>
+							<Link to='/dashboard'>Dashboard</Link>
+						</a>
+						<a className='btn btn-ghost btn-sm rounded-btn'>
+							<Link to='/search'>Add publication</Link>
+						</a>
+						<a className='btn btn-ghost btn-sm rounded-btn'>
+							<Link to='/'>Verify claims</Link>
+						</a>
+					</div>
 				</div>
-				<div className='flex-none'>
-					<Link to='/search'>
-						<button className='btn btn-square btn-ghost'>
-							<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' className='inline-block w-6 h-6 stroke-current'>
-								<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+				<div className='navbar-end'>
+					<div className='flex-none'>
+						<a className='btn btn-ghost btn-sm rounded-btn'>
+							<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' className='inline-block w-5 mr-2 stroke-current'>
+								<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'></path>
 							</svg>
-						</button>
-					</Link>
-				</div>
-				<div className='flex-none'>
-					<button className='btn btn-square btn-ghost'>
-						<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' className='inline-block w-6 h-6 stroke-current'>
-							<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'></path>
-						</svg>
-					</button>
-				</div>
-				<div className='flex-none'>
-					<div className='avatar'>
-						<div className='rounded-full w-10 h-10 m-1'>
-							<Link to='/settings'>
-								<img src='https://i.pravatar.cc/500?img=32'/>
-							</Link>
+              Notifications
+						</a>
+					</div>
+					<div className='flex-none'>
+						<div className='avatar'>
+							<div className='rounded-full w-10 h-10 m-1'>
+								<Link to='/settings'>
+									<img src='https://i.pravatar.cc/500?img=32'/>
+								</Link>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -81,7 +79,7 @@ function App() {
 function SettingsView() {
 	return (
 		<div className=''>
-			<h1>Settings page</h1>
+			<h1 className='text-slate-500'>Settings page</h1>
 		</div>
 	);
 }
@@ -90,7 +88,7 @@ function HomePage() {
 	const style = {class: '', padding: '8px'};
 	return (
 		<div style={style}>
-			<h1>Homepage</h1>
+			<h1 className='text-slate-500'>Homepage</h1>
 		</div>
 	);
 }
