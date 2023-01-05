@@ -1,30 +1,38 @@
 # Elixir CircleCI 2.0 configuration file
 # See: https://circleci.com/docs/2.0/language-elixir/
-version: 2
+version: 2.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    environment:
+      POSTGRES_TESTING_HOST: postgres
     docker:
-      # specify the version here
-      - image: cimg/elixir:1.14.2
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
+      - image: "cimg/base:current"
+    parallelism: 1
     working_directory: ~/repo
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
       - checkout
-
-      # specify any bash command here prefixed with `run: `
-      - run: mix archive.install hex
-      - run: mix deps.get
-      - run: mix ecto.create
-      - run: mix test
+      - run:
+          name: Create the containers
+          command: docker-compose up --no-start --build postgres paperlens
+      - run:
+          name: Start the containers
+          command: docker-compose up -d postgres
+      - run: # may delete this step I think
+          name: Copy code onto elixir docker image
+          command: |
+            docker cp /home/circleci/repo paperlens:/home/circleci/project
+      - run:
+          name: Install deps and run tests
+          command: |
+            docker-compose run --rm paperlens sh -c "\
+              mix local.hex --force \
+              && mix local.rebar --force \
+              && mix deps.get \
+              && MIX_ENV=test mix ecto.create \
+              && mix test"

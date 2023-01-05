@@ -8,7 +8,7 @@ import Config
 config :paperlens, Paperlens.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
+  hostname: System.get_env("POSTGRES_TESTING_HOST") || "localhost",
   database: "paperlens_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
@@ -18,7 +18,7 @@ config :paperlens, Paperlens.Repo,
 config :paperlens_web, PaperlensWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "mxU4XkIuF/B4gGQG0gMB24muBrf3FUcpdnz5BV9hjJYaSK4IrF6fBn3md8oJvOiF",
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
