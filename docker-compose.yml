@@ -1,5 +1,17 @@
 version: "3"
 services:
+  paperlens:
+    image: cimg/elixir:1.14.2-node
+    ports:
+      - 443:443
+      - 4000:4000
+    container_name: paperlens
+    working_dir: /home/circleci/project/repo
+    volumes:
+      - /home/circleci/project:/home/circleci/project
+    tty: false
+    environment:
+      POSTGRES_TESTING_HOST: postgres
   postgres:
     image: postgres:14.1
     ports:

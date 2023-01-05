@@ -23,7 +23,7 @@ npm run dev
 To run backend API tests:
 
 ```
-mix test --only api:true
+mix test --only api
 ```
 
 `mix test` runs all the tests including generated ones.
