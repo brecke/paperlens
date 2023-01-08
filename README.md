@@ -1,4 +1,5 @@
 [![XO code style](https://shields.io/badge/code_style-5ed9c7?logo=xo&labelColor=gray)](https://github.com/xojs/xo)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/brecke/paperlens/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/brecke/paperlens/tree/master)
 
 # Paperlens.Umbrella
 
