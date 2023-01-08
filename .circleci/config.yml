@@ -28,11 +28,23 @@ jobs:
           command: |
             docker cp /home/circleci/repo paperlens:/home/circleci/project
       - run:
-          name: Install deps and run tests
+          name: Install deps
           command: |
-            docker-compose run --rm paperlens sh -c "\
-              mix local.hex --force \
-              && mix local.rebar --force \
-              && mix deps.get \
-              && MIX_ENV=test mix ecto.create \
-              && mix test"
+            docker-compose run --rm paperlens "mix deps.get"
+      - run:
+          name: Create testing database
+          command: |
+            docker-compose run --rm paperlens "MIX_ENV=test mix ecto.create"
+      - run:
+          name: Run tests
+          command: |
+            docker-compose run --rm paperlens "mix test"
+      - run:
+          name: Generate a release file
+          command: |
+            docker-compose run --rm paperlens "export DATABASE_URL=ecto://postgres:postgres@$POSTGRES_TESTING_HOST/phoenix_react_dev \
+                && mix deps.get --only prod \
+                && MIX_ENV=prod mix compile \
+                && mix webapp \
+                && cd apps/paperlens_web ; mix phx.gen.release \
+                && MIX_ENV=prod mix release"

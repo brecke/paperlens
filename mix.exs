@@ -7,7 +7,15 @@ defmodule Paperlens.Umbrella.MixProject do
       version: "0.1.0",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases()
+      aliases: aliases(),
+      releases: [
+        paperlens_umbrella: [
+          applications: [
+            paperlens: :permanent,
+            paperlens_web: :permanent
+          ]
+        ]
+      ]
     ]
   end
 
